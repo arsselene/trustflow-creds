@@ -14,7 +14,165 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      activity_history: {
+        Row: {
+          action: string
+          created_at: string
+          details: string | null
+          entity_id: string | null
+          entity_type: string | null
+          id: string
+          user_id: string
+        }
+        Insert: {
+          action: string
+          created_at?: string
+          details?: string | null
+          entity_id?: string | null
+          entity_type?: string | null
+          id?: string
+          user_id: string
+        }
+        Update: {
+          action?: string
+          created_at?: string
+          details?: string | null
+          entity_id?: string | null
+          entity_type?: string | null
+          id?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      nft_assets: {
+        Row: {
+          contract_address: string | null
+          created_at: string
+          description: string | null
+          document_hash: string | null
+          id: string
+          image_url: string | null
+          metadata: Json | null
+          name: string
+          owner_id: string
+          token_id: string | null
+        }
+        Insert: {
+          contract_address?: string | null
+          created_at?: string
+          description?: string | null
+          document_hash?: string | null
+          id?: string
+          image_url?: string | null
+          metadata?: Json | null
+          name: string
+          owner_id: string
+          token_id?: string | null
+        }
+        Update: {
+          contract_address?: string | null
+          created_at?: string
+          description?: string | null
+          document_hash?: string | null
+          id?: string
+          image_url?: string | null
+          metadata?: Json | null
+          name?: string
+          owner_id?: string
+          token_id?: string | null
+        }
+        Relationships: []
+      }
+      notifications: {
+        Row: {
+          created_at: string
+          id: string
+          is_read: boolean | null
+          message: string
+          type: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          is_read?: boolean | null
+          message: string
+          type?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          is_read?: boolean | null
+          message?: string
+          type?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          did_address: string | null
+          full_name: string | null
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          did_address?: string | null
+          full_name?: string | null
+          id: string
+          updated_at?: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          did_address?: string | null
+          full_name?: string | null
+          id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      verifiable_credentials: {
+        Row: {
+          created_at: string
+          document_hash: string
+          id: string
+          is_verified: boolean | null
+          issuance_date: string
+          issuer_did: string
+          owner_id: string
+          raw_json_vc: Json | null
+          type: string
+        }
+        Insert: {
+          created_at?: string
+          document_hash: string
+          id?: string
+          is_verified?: boolean | null
+          issuance_date?: string
+          issuer_did: string
+          owner_id: string
+          raw_json_vc?: Json | null
+          type: string
+        }
+        Update: {
+          created_at?: string
+          document_hash?: string
+          id?: string
+          is_verified?: boolean | null
+          issuance_date?: string
+          issuer_did?: string
+          owner_id?: string
+          raw_json_vc?: Json | null
+          type?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
